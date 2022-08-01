@@ -1,3 +1,3 @@
-# sparta_chpater1
+# sparta_chpater1 : ㄱㅈㄱㅈ
 
-## 경주 디저트 / 카페 맛집 찾을것
+## API 설계하기
