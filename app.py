@@ -12,6 +12,11 @@ def main():
     cafe_list = list(db.cafes.find({}))
     return render_template("cafes.html", cafe_list=cafe_list)
 
+@app.route('/like')
+def like():
+    like_state = request.form['like_give']
+    return jsonify({'msg':'좋아요'})
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
