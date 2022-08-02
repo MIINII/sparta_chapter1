@@ -50,6 +50,9 @@
 }
 
 .login_btn {
+  margin: auto;
+  width: 90%;
+  height: 10%;
   background-color: #075da5;
 }
 
