@@ -42,18 +42,21 @@
   margin-top: 10px;
   color: #062947;
 }
+.inform_box>input {
+  width: 300px;
+}
 
 .sign_up {
   margin: auto;
   color: #aaa;
-
 }
 
 .login_btn {
+  width: 350px;
   margin: auto;
-  width: 90%;
   height: 10%;
-  background-color: #075da5;
+  color: white;
+  border-radius: 10px;
 }
 
 .login_btn:hover {
