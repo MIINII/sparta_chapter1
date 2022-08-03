@@ -10,6 +10,8 @@
 
 ---
 
+깃허브어렵다
+
 ## Logo color
 ㄱㅈㄱㅈ Main Royal Blue : #075DA5
 ㄱㅈㄱㅈ Sub Royal Gold : #D1BE6B
