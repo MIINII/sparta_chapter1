@@ -5,7 +5,7 @@ from time import sleep
 from pymongo import MongoClient
 import random
 
-client = MongoClient("mongodb+srv://chapter01:chapter01@chapter01.lnhgc.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient('mongodb+srv://hjs77728:vslbeW9FJCTw4r6z@cluster0.xx4eod5.mongodb.net/?retryWrites=true&w=majority')
 db = client.chapter01
 
 driver = webdriver.Chrome('./chromedriver')  # 드라이버를 실행합니다.
