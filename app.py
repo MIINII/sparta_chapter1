@@ -99,18 +99,18 @@ def api_register():
 
 
 # [로그인]
-@app.route("/login/sign_in", methods=["POST"])
+@app.route("/sign_in", methods=["POST"])
 def sign_in():
   # 로그인
-  username_receive = request.form["username_give"]
+  userid_receive = request.form["userid_give"]
   password_receive = request.form["password_give"]
   
   pw_hash = hashlib.sha256(password_receive.encode("utf-8")).hexdigest()
-  result = db.user.find_one({"id": username_receive, "pw": pw_hash})
+  result = db.user.find_one({"id": userid_receive, "pw": pw_hash})
   
   if result is not None:
     payload = {
-      "id": username_receive,
+      "id": userid_receive,
       "exp": datetime.utcnow() + timedelta(seconds=60 * 60 * 24),  # 로그인 24시간 유지
     }
     token = jwt.encode(payload, SECRET_KEY, algorithm="HS256").decode("utf-8")

@@ -3,10 +3,10 @@ function sign_up() {
 }
 
 function sign_in() {
-  let username = $('#input-username').val()
+  let userid = $('#input-id').val()
   let password = $('#input-password').val()
 
-  if (username == '' || password == '') {
+  if (userid == '' || password == '') {
     $('#help-id').text('아이디를 입력해주세요.').focus().removeClass('is-safe').addClass('is-danger')
     $('#help-password').text('비밀번호를 입력해주세요.').focus().removeClass('is-safe').addClass('is-danger')
     $('#input-username')
@@ -17,14 +17,14 @@ function sign_in() {
 
   $.ajax({
     type: 'POST',
-    url: '/login/sign_in',
+    url: '/sign_in',
     data: {
-      username_give: username,
+      userid_give: userid,
       password_give: password,
     },
     success: function (response) {
       if (response['result'] == 'success') {
-        $.cookie('mytoken', response['token'], { path: '/main' })
+        $.cookie('mytoken', response['token'], {path: '/'});
         window.location.href = '/main'
       } else {
         alert(response['msg'])
