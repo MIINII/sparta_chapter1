@@ -46,8 +46,9 @@
   width: 300px;
 }
 
-.sign_up {
+.register_btn {
   margin: auto;
+  font-size: 12px;
   color: #aaa;
 }
 

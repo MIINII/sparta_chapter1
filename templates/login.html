@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!--  jQuery-->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"></script>
+    <!--  jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-  <!--  tailwind  -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
 
-  <!-- Style -->
-  <link rel="stylesheet" href="../static/css/login.css" />
+    <!--  tailwind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
-  <script src="../static/js/login.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="../static/css/login.css" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
-  <title>ㄱㅈㄱㅈ 로그인</title>
+    <script src="../static/js/login.js"></script>
 
-</head>
-<body>
-<div id="wrap">
-  <div class="random_img"></div>
+    <title>ㄱㅈㄱㅈ 로그인</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="random_img"></div>
 
-  <section class="login_section">
-    <div class="logo">
-      <img src="../static/img/logo/logo.svg" alt="logo" />
+      <section class="login_section">
+        <div class="logo">
+          <img src="../static/img/logo/logo.svg" alt="logo" />
+        </div>
+
+        <div class="inform">
+          <div class="inform_box">
+            <input id="input-username" class="w-fit rounded" type="text" placeholder="아이디" />
+            <p id="help-id" class="help text-xs text-gray-500"></p>
+          </div>
+
+          <div class="inform_box">
+            <input id="input-password" class="w-fit rounded" type="password" placeholder="비밀번호" />
+            <p id="help-password" class="help text-xs text-gray-500"></p>
+          </div>
+        </div>
+
+        <button class="register_btn" onclick="sign_up()">아직 회원이 아니신가요?</button>
+
+        <button type="button" class="login_btn bg-sky-700" onclick="sign_in()">로그인</button>
+      </section>
     </div>
-
-    <div class="inform">
-      <div class="inform_box">
-        <input id="input-username" class="w-fit rounded" type="text" placeholder="아이디" />
-        <p id="help-id" class="help text-xs text-gray-500">
-          아이디는 2-10자의 영문과 숫자와 일부 특수문자(._-)만 입력 가능합니다.
-        </p>
-        <p id="help-id-login" class="help is-danger"></p>
-      </div>
-      <div class="inform_box">
-        <input id="input-password" class="w-fit rounded" type="password" placeholder="비밀번호" />
-        <p id="help-password" class="#help-password-login text-xs text-gray-500">
-          영문과 숫자 조합의 8-20자의 비밀번호를 설정해주세요. 특수문자(!@#$%^&*)도 사용 가능합니다.
-        </p>
-      </div>
-    </div>
-
-
-    <button class="level-item button is-sparta is-outlined"
-        onclick="toggle_sign_up()">
-      회원가입하기
-    </button>
-
-    <button type="button" class="login_btn bg-sky-700" onclick="sign_in()">로그인</button>
-  </section>
-</div>
-</body>
+  </body>
 </html>

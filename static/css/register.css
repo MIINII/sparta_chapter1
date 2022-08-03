@@ -1,15 +1,35 @@
-.wrap{
-  margin: auto;
+body {
   display: flex;
-  flex-direction: column;
-}
-header{
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: #075da5;
 }
 
-.header_title {
+.wrap {
+  box-sizing: border-box;
+  width: 30%;
+  margin: 1.875rem auto 1.875rem auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  z-index: 300;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px grey;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.yes_id {
   font-weight: 800;
+}
+.yes_id:hover {
+  cursor: pointer;
+  color:#075da5;
 }
 
 .make {
@@ -21,12 +41,17 @@ header{
 .id_title {
   font-weight: 800;
   color: #666;
+  width: 25%;
+}
+
+.id_input {
+  width: 54%;
 }
 
 .confirm_btn {
   width: 100px;
   height: 40px;
   font-weight: 600;
-  background-color:#075da5;
+  background-color: #075da5;
   color: white;
 }

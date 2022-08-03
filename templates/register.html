@@ -13,8 +13,12 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="../tailwind.config.js"></script>
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- style -->
     <link rel="stylesheet" href="../static/css/register.css" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,19 +29,19 @@
     <title>ㄱㅈㄱㅈ 회원가입</title>
   </head>
   <body>
-    <div class="wrap w-3/6 my-10">
+    <div class="wrap">
       <header>
         <div class="header_logo w-32">
-          <img src="../img/logo.png" alt="logo" />
+          <img src="../static/img/logo/logo.svg" alt="logo" />
         </div>
-        <h2 class="header_title text-lg text-sky-800">회원가입</h2>
+        <span class="yes_id text-sm text-slate-500" onclick="sign_in()">☕이미 계정이 있으세요?</span>
       </header>
 
       <div class="container_box my-20">
         <div class="container my-10">
           <div class="make">
             <span class="id_title">아이디</span>
-            <input type="text" id="userid" class="input w-3/6 rounded-lg border-slate-500" placeholder="아이디를 입력하세요" />
+            <input type="text" id="userid" class="input id_input rounded-lg border-slate-500" placeholder="아이디를 입력하세요" />
             <div class="id_confirm">
               <button class="confirm_btn rounded-lg" onclick="check_dup()">중복확인</button>
             </div>
@@ -55,25 +59,27 @@
           <p id="help-nick" class="help text-xs text-right text-gray-500">닉네임은 영어와 한글만 가능합니다.</p>
         </div>
 
-        <div class="container my-10">
-          <div class="make">
-            <span class="id_title">비밀번호</span>
-            <input type="password" id="userPw" class="input w-9/12 rounded-lg border-slate-500" placeholder="비밀번호를 입력하세요" />
+        <div class="pasword_confirm">
+          <div class="container my-10">
+            <div class="make">
+              <span class="id_title">비밀번호</span>
+              <input type="password" id="userPw" class="input w-9/12 rounded-lg border-slate-500" placeholder="비밀번호를 입력하세요" onchange="same_pw()" />
+            </div>
+
+            <p id="help-pw" class="help text-xs text-right text-gray-500">영문과 숫자 조합의 8-20자의 비밀번호를 설정해주세요.</p>
           </div>
 
-          <p id="help-pw" class="help text-xs text-right text-gray-500">영문과 숫자 조합의 8-20자의 비밀번호를 설정해주세요.</p>
-        </div>
+          <div class="container my-10">
+            <div class="make">
+              <span class="id_title">비밀번호 확인</span>
+              <input type="password" id="userPw2" class="input w-9/12 rounded-lg border-slate-500" placeholder="비밀번호를 한번 더 입력하세요" onchange="same_pw()" />
+            </div>
 
-        <div class="container my-10">
-          <div class="make">
-            <span class="id_title">비밀번호 확인</span>
-            <input type="password" id="userPw2" class="input w-9/12 rounded-lg border-slate-500" placeholder="비밀번호를 한번 더 입력하세요" />
+            <p id="help-pw2" class="help text-xs text-right text-gray-500">비밀번호를 한번 더 입력해주세요</p>
           </div>
-
-          <p id="help-pw2" class="help text-xs text-right text-gray-500">비밀번호를 한번 더 입력해주세요</p>
         </div>
 
-        <button class="button w-full h-12 rounded-lg bg-sky-800 text-white my-10" onclick="check_dup(); same_pw(); register()">회원가입</button>
+        <button class="button w-full h-12 rounded-lg bg-sky-800 text-white my-10 hover:text-white" onclick="register()">회원가입</button>
       </div>
     </div>
   </body>
