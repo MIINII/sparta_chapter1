@@ -1,0 +1,32 @@
+.wrap{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title {
+  font-weight: 800;
+}
+
+.make {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id_title {
+  font-weight: 800;
+  color: #666;
+}
+
+.confirm_btn {
+  width: 100px;
+  height: 40px;
+  font-weight: 600;
+  background-color:#075da5;
+  color: white;
+}
