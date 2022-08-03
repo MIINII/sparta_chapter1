@@ -1,38 +1,100 @@
 {% extends "base.html" %}
 
 {% block contents %}
-<div class="buttons">
-    <button>#전체보기</button>
-    <button>#좋아요</button>
-    <button>#베이커리</button>
-    <button>#커피</button>
-    <button>#빙수</button>
-    <button>#감성</button>
-    <button>#디저트</button>
-</div>
 
-<div class="row row-cols-1 row-cols-md-3 g-5" style="width: 70rem; height: 30rem; margin:auto">
-    {% for cafe in cafe_list %}
-    <div class="col">
-        <div class="card" style="border-radius: 10px;">
-            <div onclick="like(this)">
-                <span class="icon"><i class="fa-solid fa-heart fa-xl like"></i></span>
+
+    {% set state="디저트" %}
+
+    <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 80%; height: 80%; margin:auto">
+        {% for cafe in cafe_list if state in cafe["hashtags"] %}
+            <div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                           onclick="like(this)"></i></span>
+                            <span class="like-count">{{ cafe["like_user"] | length }}</span>
+                        </div>
+                    </div>
+                    <img src="{{ cafe['image'] }}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                        overflow:hidden;
+                                        text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>{{ cafe['title'] }}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>{{ cafe["stars"] }}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            {% for hash in cafe["hashtags"] %}
+                                <span>{{ "#{0}".format(hash) }}</span>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <img src="{{cafe['image']}}" class="card-img-top" alt="...">
-            <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
-                <h5 class="card-title">
-                    <div><i class="fa-solid fa-mug-saucer fa-xs" style="margin-right:5px"></i>{{cafe['title']}}</div>
-                    <span><i class="fa-solid fa-star"
-                             style="margin-right:5px; color:#F7D358;"></i>{{ cafe["stars"] }}</span>
-                </h5>
-                <p class="card-text" style="font-size:12px; color:#075DA5">
-                    {% for hash in cafe["hashtags"] %}
-                    <span>{{ "#{0}".format(hash) }}</span>
-                    {% endfor %}
-                </p>
-            </div>
-        </div>
+
+
+            <style>
+                .card:hover {
+                    transition: 0.1s;
+                    transform: scale(1.08);
+                }
+
+                .card {
+                    position: relative;
+                }
+
+                .icon-cover {
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+
+                    background-color: white;
+                    width: 60px;
+                    height: 25px;
+
+                    border-radius: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+
+                .card-title {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                }
+
+                .like {
+                    color: #FF4646;
+                }
+
+                .like-count {
+                    font-size: 14px;
+                }
+
+            </style>
+            <script>
+                function like(v) {
+                    let class_list = v.classList;
+                    if (class_list.contains("fa-heart-o")) {
+                        v.classList.remove("fa-heart-o")
+                        v.classList.add("fa-heart");
+
+
+                    } else {
+                        v.classList.add("fa-heart-o")
+                        v.classList.remove("fa-heart");
+                    }
+                }
+            </script>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 {% endblock %}
