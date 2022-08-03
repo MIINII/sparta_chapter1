@@ -13,14 +13,18 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+
     <title>경주가자</title>
     <style>
 
         * {
             list-style: none;
             text-decoration-line: none;
+
             font-family: 'Gowun Batang', serif;
+
         }
 
         .header {
@@ -35,6 +39,7 @@
 
         .header .logo > img {
             width: 300px;
+
             margin: auto
             cursor: pointer;
         }
@@ -53,7 +58,11 @@
             width: 50%;
             height: 300px;
             float: left;
+
+            margin: auto;
         }
+
+
 
         .contents .cafe_img > img {
             width: 100%;
@@ -74,9 +83,9 @@
         }
 
         .contents .cafe_info .info .cafe_name {
+
             font-size: 30px;
             margin: 30px 0 0px 20px;
-
         }
 
         .contents .cafe_info .info .cafe_address {
@@ -114,7 +123,9 @@
             max-width: 700px;
             padding: 20px;
             box-shadow: 0px 0px 10px 0px lightblue;
+
             border-radius: 10px;
+
             margin: 30px auto 0px auto;
         }
 
@@ -161,10 +172,11 @@
             transform: scale(0.5%);
         }
 
-
     </style>
 
     <script>
+
+
         $(document).ready(function () {
             show_comment();
         });
@@ -208,7 +220,9 @@
             $.ajax({
                 type: "POST",
                 url: "/comment",
+
                 data: {comment_give: comment},
+
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
@@ -221,7 +235,9 @@
             $.ajax({
                 type: "POST",
                 url: "/comment_delete",
+
                 data: {num_give: num},
+
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
@@ -234,7 +250,9 @@
 <body>
 <div id="wrap">
     <header class="header">
+
         <div class="logo" onclick="window.location.href = '/main'">
+
             <img alt="logo"
                  src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/c756999647e02db5373558b5624842c89a46c6c3/img/logo/logo.png">
         </div>
@@ -250,8 +268,7 @@
             </ul>
         </div>
     </div>
-    {#    <div class="gomain" onclick="window.location.href = '/main'">#}
-    {#    </div>#}
+
     <div class="commentbox">
         <div class="mycomment">
             <!--        <input id="comment" class="form-control" type="text" placeholder="댓글을 자유롭게 남겨주세요.">-->
