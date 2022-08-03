@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block contents %}
+
+    <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 70%; height: 70%; margin:auto">
+        {% for cafe in cafe_list %}
+            <div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                           id="{{ cafe.title }}"
+                                                           onclick="like(this)"></i></span>
+                            <span class="like-count">{{ cafe["like_user"] | length }}</span>
+                        </div>
+                    </div>
+                    <img src="{{ cafe['image'] }}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                        overflow:hidden;
+                                        text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>{{ cafe['title'] }}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>{{ cafe["stars"] }}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            {% for hash in cafe["hashtags"] %}
+                                <span>{{ "#{0}".format(hash) }}</span>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <style>
+                .card:hover {
+                    transition: 0.1s;
+                    transform: scale(1.08);
+                }
+
+                .card {
+                    position: relative;
+                }
+
+                .icon-cover {
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+
+                    background-color: white;
+                    width: 60px;
+                    height: 25px;
+
+                    border-radius: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+
+                .card-title {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                }
+
+                .like {
+                    color: #FF4646;
+                }
+
+                .like-count {
+                    font-size: 14px;
+                }
+
+            </style>
+            <script>
+                function like(v) {
+                    let class_list = v.classList;
+
+                    let username = "temp"; // 현재 접속이 되어있는 유저네임을 받아오기
+                    let post_title = v["id"]; // 누른 게시물의 이름 정보
+                    console.log(post_title);
+
+                    if (class_list.contains("fa-heart-o")) {
+                        v.classList.remove("fa-heart-o")
+                        v.classList.add("fa-heart");
+                    } else {
+                        v.classList.add("fa-heart-o")
+                        v.classList.remove("fa-heart");
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: '/like',
+                        data: {username_give: username, post_title_give: post_title},
+                        success: function (response) {
+                            alert(response['msg'])
+                            window.location.reload()
+                        }
+                    });
+                }
+            </script>
+        {% endfor %}
+    </div>
+{% endblock %}
