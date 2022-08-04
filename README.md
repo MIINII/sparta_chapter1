@@ -1,5 +1,5 @@
 # 🥨ㄱㅈㄱㅈ : <경주가자>
-![](https://postfiles.pstatic.net/MjAyMjA4MDRfMjk4/MDAxNjU5NjAxNzI4ODYw.GQ38tN4suqMAB_lIhuXqxh2ZaMgM5c-ZMBhAocO0Odog.Zg0KSGT4WxbTuz76ERzC7GQUXKFScwVwMXjHvTSi7Ugg.JPEG.ssuperr_/aa.jpg?type=w966)
+![](https://youtu.be/ubxj87RNXts)
 
 > **경주의 카페나 디저트 맛집을 소개**하고 위치를 알려주는 사이트!  
 > [🚗경주가자 : ㄱㅈㄱㅈ](http://54.180.99.62/)  
