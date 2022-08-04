@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92dd8985-ea21-4d2c-9157-b55775a02fac" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sparta_chapter01.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sparta_chapter1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screen_shot/detail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screen_shot/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screen_shot/login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/favicon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/sliding_img01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/sliding_img02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/sliding_img03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/sliding_img04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cafes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/map.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sparta_chapter01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sparta_chapter01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cafes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cafes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,17 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/doridak/Documents/sparta_chapter1",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sparta_chapter1&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.sparta_chapter01">
+    <configuration name="cafes.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/sparta_chapter1/templates/cafes.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="sparta_chapter01" type="PythonConfigurationType" factoryName="Python">
       <module name="sparta_chapter01" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,6 +92,11 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript 디버그.cafes.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -140,6 +112,8 @@
       <workItem from="1659545357445" duration="2269000" />
       <workItem from="1659571445599" duration="929000" />
       <workItem from="1659572797823" duration="4633000" />
+      <workItem from="1659581303288" duration="338000" />
+      <workItem from="1659581694943" duration="1364000" />
     </task>
     <servers />
   </component>
@@ -163,14 +137,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$USER_HOME$/Desktop/[안전폴더]miniProject/miniProject/templates/cafes.html</url>
           <line>171</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sparta_chapter1$sparta_chapter01.coverage" NAME="sparta_chapter01 커버리지 결과" MODIFIED="1659577394605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/sparta_chapter1$sparta_chapter01.coverage" NAME="sparta_chapter01 커버리지 결과" MODIFIED="1659582333087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/sparta_chapter1$app.coverage" NAME="app 커버리지 결과" MODIFIED="1659537293290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sparta_chapter01$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1659538452208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
