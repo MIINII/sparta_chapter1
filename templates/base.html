@@ -14,7 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <title> 경주가자 | Main </title>
     <script>
@@ -27,30 +29,30 @@
 
 </head>
 <body>
-<section class="hero">
-  <div class="hero-body">
-    <img class="logo"
-         src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/2e3d282fcd404f2f464a6ba40a8d2d551603f5b1/img/logo/logo.svg">
-  </div>
-</section>
-
-
-    <div>
-        {% block contents %}
-        {% endblock %}
+<header class="header">
+    <div class="logo" onclick="window.location.href = '/'">
+        <img alt="logo"
+             src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/c756999647e02db5373558b5624842c89a46c6c3/img/logo/logo.png"/>
     </div>
+</header>
 
-    <footer class="footer" style="margin-top:10rem;">
-        <div class="content has-text-centered">
-            <p style="font-size:8px; color:gray" ;>
-                공지사항 | 이용약관 | <span id="joke">상세보기</span>
-            </p>
-            <p>
-                <i class="far fa-copyright is-small"></i><img style="width:100px; height:100px; margin-left: 10px"
-                                                              src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/2a8ed7d0f1093030fed96efb715210bcaee3a8db/img/logo/logo.svg">
-            </p>
-        </div>
-    </footer>
+
+<div>
+    {% block contents %}
+    {% endblock %}
+</div>
+
+<footer class="footer" style="margin-top:10rem;">
+    <div class="content has-text-centered">
+        <p style="font-size:8px; color:gray" ;>
+            공지사항 | 이용약관 | <span id="joke">상세보기</span>
+        </p>
+        <p>
+            <i class="far fa-copyright is-small"></i><img style="width:100px; height:100px; margin-left: 10px"
+                                                          src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/2a8ed7d0f1093030fed96efb715210bcaee3a8db/img/logo/logo.svg">
+        </p>
+    </div>
+</footer>
 </body>
 
 </html>

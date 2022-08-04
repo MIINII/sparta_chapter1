@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>경주가자</title>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=zoy4z6uvyv"></script>
-    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% extends "base.html" %}
+{%block contents %}
+<div class="wrap">
+    <div id="map"></div>
+    <div class="matjip-list" id="matjip-box">
+        <div class="card" id="card-0">
 
-    <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+        </div>
+    </div>
+</div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <style>
+   <style>
         .wrap {
             width: 90%;
             max-width: 750px;
@@ -163,25 +148,7 @@
             });
         }
     </script>
+    <script type="text/javascript"
+            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=zoy4z6uvyv"></script>
 
-
-</head>
-<body>
-
-<div class="wrap">
-    <header class="header">
-        <div class="logo" onclick="window.location.href = '/'">
-            <img alt="logo"
-                 src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/c756999647e02db5373558b5624842c89a46c6c3/img/logo/logo.png">
-        </div>
-    </header>
-    <div id="map"></div>
-    <div class="matjip-list" id="matjip-box">
-        <div class="card" id="card-0">
-
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+{% endblock %}

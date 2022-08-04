@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 from pymongo import MongoClient
 import jwt
 import datetime
@@ -130,6 +129,9 @@ def sign_in():
 @app.route("/<detail>", methods=["GET"])
 def cafe_detail(detail):
     cafe = db.cafes.find_one({"title": detail})
+
+    if cafe is None:
+        return redirect(url_for("/"))
     return render_template("detail.html", cafe=cafe)
 
 
@@ -193,6 +195,34 @@ def comment_delete():
 def comment_get():
     comment_list = list(db.comment.find({}, {"_id": False}))
     return jsonify({"comments": comment_list})
+
+####################################################### filtering
+@app.route('/all', methods=["GET"])
+def listing_all():
+    all_list = list(db.cafes.find({}, {'_id': False}))
+    return jsonify({'all_lists': all_list})
+
+@app.route('/disert', methods=["GET"])
+def listing_disert():
+    disert_list = list(db.cafes.find({}, {'_id': False}))
+    return jsonify({'disert_lists': disert_list})
+
+@app.route('/coffee', methods=["GET"])
+def listing_coffee():
+    coffee_list = list(db.cafes.find({}, {'_id': False}))
+    return jsonify({'coffee_lists': coffee_list})
+
+@app.route('/bing', methods=["GET"])
+def listing_bing():
+    bing_list = list(db.cafes.find({}, {'_id': False}))
+    return jsonify({'bing_lists': bing_list})
+
+
+@app.route('/like', methods=["GET"])
+def listing_like():
+    like_list = list(db.cafes.find({}, {'_id': False}))
+    return jsonify({'like_lists': like_list})
+####################################################### filtering
 
 
 if __name__ == "__main__":
