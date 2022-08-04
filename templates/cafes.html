@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <!-- carousel 네번째 배너 -->
+            <!-- carousel 네번째 배 -->
             <div class="carousel-item">
                 <img src="../static/image/sliding_img04.jpg" width="100%" height="400px"/>
                 <div class="container">
@@ -57,8 +57,13 @@
         <button onclick="listing_all()" type="button" class="btn btn-outline-secondary"># 전체</button>
         <button type="button" class="btn btn-outline-secondary"># 디저트</button>
         <button type="button" class="btn btn-outline-secondary"># 커피</button>
-        <button type="button" class="btn btn-outline-secondary"># 떡</button>
-        <button type="button" class="btn btn-outline-secondary"># 조아요</button>
+<<<<<<< HEAD
+        <button type="button" class="btn btn-outline-secondary"># 케이크테스트테스트</button>
+        <button type="button" class="btn btn-outline-secondary"># 조아요테스트</button>
+=======
+        <button type="button" class="btn btn-outline-secondary"># 케이크</button>
+        <button type="button" class="btn btn-outline-secondary"># 좋아요</button>
+>>>>>>> 72373e9c4356be206ebb48c50359b37755603b9a
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin: auto">
@@ -136,9 +141,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script src="{{ url_for('static', filename='myjs.js') }}"></script>
     <script>
-        $(document).ready(function () {
-            get_posts()
-        })
 
         function like(v) {
             let class_list = v.classList
@@ -169,6 +171,7 @@
         $("#store").empty()
         $(document).ready(function () {
             listing_all();
+            console.log("{{ user_info["id"] }}")
         });
 
         function listing_all() {
