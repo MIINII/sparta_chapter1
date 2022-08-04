@@ -10,8 +10,9 @@
 
   |😛강윤주|🥰신정민|🤩심유선|😛유민아|😎황준수
   |:--:|:--:|:--:|:--:|:--:|
-  |하신일|하신일|하신일|하신일|하신일|
-  |하신일|하신일|하신일|하신일|하신일|  
+  |하신일|로그인|하신일|하신일|하신일|
+  |하신일|회원가입|하신일|하신일|하신일|  
+  |하신일|db연결/레포만들기|하신일|하신일|하신일|  
 
 ------------------------------------------
 
@@ -24,7 +25,7 @@
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)  ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)  ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black)  ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)  
 
-## PROJECT TREE
+## PROJECT TREE🌳
 ```
 sparta_chapter1
 ├─ app.py
