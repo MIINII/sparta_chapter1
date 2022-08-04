@@ -13,8 +13,8 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/reset.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <title>경주가자</title>
     <style>
@@ -22,9 +22,7 @@
         * {
             list-style: none;
             text-decoration-line: none;
-
-            font-family: 'Gowun Batang', serif;
-
+            font-family: 'Gowun Dodum', sans-serif;
         }
 
         .header {
@@ -39,40 +37,30 @@
 
         .header .logo > img {
             width: 300px;
-
-            margin: auto
-            cursor: pointer;
-        }
-
-        .contents {
-            width: 800px;
-            height: 300px;
-            margin: 0 auto 20px auto;
-            border: 1px solid #fff;
-            box-shadow: 0px 0px 5px 0px #555;
-            border-radius: 10px;
-
-        }
-
-        .contents .cafe_img {
-            width: 50%;
-            height: 300px;
-            float: left;
-
             margin: auto;
         }
 
+        .contents {
+            width: 1000px;
+            height: 500px;
+            margin: auto;
+            border: ;
+        }
 
+        .contents .cafe_img {
+            width: 55%;
+            height: 500px;
+            float: left;
+            margin-top: 50px;
+        }
 
         .contents .cafe_img > img {
             width: 100%;
-            margin: 15px;
-            border-radius: 10px;
         }
 
         .contents .cafe_info {
-            width: 47%;
-            height: 300px;
+            width: 45%;
+            height: 500px;
             float: right;
         }
 
@@ -83,20 +71,15 @@
         }
 
         .contents .cafe_info .info .cafe_name {
+            font-size: 40px;
+            margin: 60px 0 0px 20px;
 
-            font-size: 30px;
-            margin: 30px 0 0px 20px;
         }
 
         .contents .cafe_info .info .cafe_address {
-            font-size: 18px;
-            margin-top: 120px;
-
-        }
-
-        .contents .cafe_info .info .cafe_address a {
+            font-size: 20px;
+            margin-top: 170px;
             text-decoration-line: none;
-            color: black;
         }
 
         .contents .cafe_info .info .cafe_star {
@@ -123,9 +106,6 @@
             max-width: 700px;
             padding: 20px;
             box-shadow: 0px 0px 10px 0px lightblue;
-
-            border-radius: 10px;
-
             margin: 30px auto 0px auto;
         }
 
@@ -146,7 +126,6 @@
             max-width: 700px;
             padding: 20px;
             box-shadow: 0px 0px 10px 0px lightblue;
-            border-radius: 10px;
             margin: 10px auto;
         }
 
@@ -174,9 +153,7 @@
 
     </style>
 
-    <script>
-
-
+      <script>
         $(document).ready(function () {
             show_comment();
         });
@@ -207,7 +184,6 @@
                 }
             });
         }
-
         // 코멘트 저장 메세지
         function save_comment() {
             let comment = $('#comment').val()
@@ -220,24 +196,19 @@
             $.ajax({
                 type: "POST",
                 url: "/comment",
-
-                data: {comment_give: comment},
-
+                data: { comment_give: comment },
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
                 }
             });
         }
-
         // 코멘트 삭제
         function delete_comment(num) {
             $.ajax({
                 type: "POST",
                 url: "/comment_delete",
-
-                data: {num_give: num},
-
+                data: { num_give:num },
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
@@ -250,9 +221,7 @@
 <body>
 <div id="wrap">
     <header class="header">
-
-        <div class="logo" onclick="window.location.href = '/main'">
-
+        <div class="logo" onclick="window.location.href = '/'">
             <img alt="logo"
                  src="https://raw.githubusercontent.com/MIINII/sparta_chapter1/c756999647e02db5373558b5624842c89a46c6c3/img/logo/logo.png">
         </div>
@@ -268,7 +237,8 @@
             </ul>
         </div>
     </div>
-
+{#    <div class="gomain" onclick="window.location.href = '/main'">#}
+{#    </div>#}
     <div class="commentbox">
         <div class="mycomment">
             <!--        <input id="comment" class="form-control" type="text" placeholder="댓글을 자유롭게 남겨주세요.">-->

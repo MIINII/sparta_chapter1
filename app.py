@@ -1,4 +1,3 @@
-
 # from multiprocessing.sharedctypes import Value
 from pymongo import MongoClient
 import jwt
@@ -25,7 +24,6 @@ db = client.chapter01
 ####################
 
 app = Flask(__name__)
-
 
 
 ###################################################################
@@ -70,10 +68,6 @@ def login():
 @app.route("/register")
 def register():
   return render_template("register.html")
-  
-@app.route('/map')
-def cafe_map():
-    return render_template("map.html")
 
 
 #################################
@@ -131,13 +125,11 @@ def sign_in():
 ##  main.html 부분인가봐요##   ##
 #################################
 
-
 # 카페 정보 detail로 들어가기
 @app.route('/<detail>', methods=["GET"])
 def cafe_detail(detail):
   cafe = db.cafes.find_one({'title': detail})
   return render_template("detail.html", cafe=cafe)
-
 
 
 # 좋아요 누르기
@@ -159,12 +151,9 @@ def cafe_map():
   return render_template("map.html")
 
 
-
 # 지도용 맛집리스트
 @app.route('/matjip', methods=["GET"])
 def get_matjip():
-
-
   # 맛집 목록을 반환하는 API
   matjip_list = list(db.cafes.find({}, {'_id': False}))
   # matjip_list 라는 키 값에 맛집 목록을 담아 클라이언트에게 반환합니다.
@@ -193,24 +182,18 @@ def comment_post():
   return jsonify({'msg': '등록을 완료하였습니다.'})
 
 
-
 @app.route("/comment_delete", methods=["POST"])
 def comment_delete():
-
   num_receive = request.form['num_give']
   db.comment.delete_one({'num': int(num_receive)})
   return jsonify({'msg': '삭제를 완료하였습니다.'})
 
 
-
 @app.route("/comment", methods=["GET"])
 def comment_get():
-
-
   comment_list = list(db.comment.find({}, {'_id': False}))
   return jsonify({'comments': comment_list})
 
 
 if __name__ == '__main__':
   app.run('0.0.0.0', port=5000, debug=True)
-
