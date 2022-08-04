@@ -21,8 +21,11 @@
     <title> 경주가자 | Main </title>
     <script>
         $(document).ready(function () {
-            $("#joke").hover(function () {
+            $("#joke").mouseover(function () {
                 $(this).text("없어요")
+            })
+            $("#joke").mouseout(function () {
+                $(this).text("상세보기")
             })
         })
     </script>
