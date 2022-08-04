@@ -19,7 +19,7 @@
 
 ------------------------------------------
 
-## 기술스택🧠
+## 🧠기술스택🧠
 ![PyCharm](https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green)  ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)  
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)  
@@ -28,7 +28,7 @@
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)  ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)  ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black)  ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)  
 
-## PROJECT TREE🌳
+## 🌳PROJECT TREE🌳
 ```
 sparta_chapter1
 ├─ app.py
@@ -67,7 +67,16 @@ sparta_chapter1
 
 ```  
   
-## TROUBLE SHOOTING💢
+## 💢TROUBLE SHOOTING💢
  * 로그인 안되고/토큰이 안만들어지는 문제 : decode함수 삭제로 해결!
  * GIT 연동 : 유튜브와 블로글 참고로 해결!
- * 서버 구현이 제대로 안되는 현상 : python 3.8버전으로 재설치!
+ * 서버 구현이 제대로 안되는 현상 : python 3.8버전으로 재설치!  
+---
+* * *
+
+## 💞LOVE MEMBERS💞  
+![🍇강윤주](https://github.com/glooooow)
+![🌊신정민](https://github.com/MIINII)
+![🏝심유선](https://github.com/Simyusun)
+![😺유민아](https://github.com/maydec2298)
+![🦖황준수](https://github.com/Hwang-Junsu)
