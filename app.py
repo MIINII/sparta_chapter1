@@ -217,11 +217,11 @@ def listing_bing():
     bing_list = list(db.cafes.find({}, {'_id': False}))
     return jsonify({'bing_lists': bing_list})
 
-
 @app.route('/like', methods=["GET"])
 def listing_like():
     like_list = list(db.cafes.find({}, {'_id': False}))
     return jsonify({'like_lists': like_list})
+
 ####################################################### filtering
 
 
