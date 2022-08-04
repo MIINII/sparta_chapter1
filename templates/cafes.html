@@ -55,39 +55,43 @@
     <!--해시태그-->
     <div class="hashtag">
         <button onclick="listing_all()" type="button" class="btn btn-outline-secondary"># 전체</button>
-        <button type="button" class="btn btn-outline-secondary"># 디저트</button>
-        <button type="button" class="btn btn-outline-secondary"># 커피</button>
-        <button type="button" class="btn btn-outline-secondary"># 케이크</button>
-        <button type="button" class="btn btn-outline-secondary"># 좋아요</button>
+        <button onclick="listing_disert()" type="button" class="btn btn-outline-secondary"># 디저트</button>
+        <button onclick="listing_coffee()" type="button" class="btn btn-outline-secondary"># 커피</button>
+        <button onclick="listing_bing()" type="button" class="btn btn-outline-secondary"># 빙수</button>
+        <button onclick="listing_like()" type="button" class="btn btn-outline-secondary"># 조아요</button>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin: auto">
+    <div id="store" class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin:auto">
         {% for cafe in cafe_list %}
-        <div class="col">
-            <div class="card" style="border-radius: 10px">
-                <div>
-                    <div class="icon-cover">
-                        <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                       id="{{ cafe.title }}" onclick="like(this)"></i></span>
-                        <span class="like-count">{{ cafe["like_user"] | length }}</span>
+            <div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                           id="{{ cafe.title }}"
+                                                           onclick="like(this)"></i></span>
+                            <span class="like-count">{{ cafe["like_user"] | length }}</span>
+                        </div>
+                    </div>
+                    <img src="{{ cafe['image'] }}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                        overflow:hidden;
+                                        text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>{{ cafe['title'] }}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>{{ cafe["stars"] }}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            {% for hash in cafe["hashtags"] %}
+                                <span>{{ "#{0}".format(hash) }}</span>
+                            {% endfor %}
+                        </p>
                     </div>
                 </div>
-                <img src="{{ cafe['image'] }}" class="card-img-top" alt="..."/>
-                <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
-                    <h5 class="card-title">
-                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><i
-                                class="fa-solid fa-mug-saucer fa-xs" style="margin-right: 5px"></i>{{ cafe['title'] }}
-                        </div>
-                        <span><i class="fa-solid fa-star" style="margin-right: 5px; color: #f7d358"></i>{{ cafe["stars"] }}</span>
-                    </h5>
-                    <p class="card-text" style="font-size: 12px; color: #075da5">
-                        {% for hash in cafe["hashtags"] %}
-                        <span>{{ "#{0}".format(hash) }}</span>
-                        {% endfor %}
-                    </p>
-                </div>
             </div>
-        </div>
         {% endfor %}
     </div>
     <style>
@@ -187,7 +191,7 @@
                         let like = all_list[i]['like_users'].length
                         let stars = all_list[i]['stars']
                         let title = all_list[i]['title']
-                        let temp_html = `<div class="col">
+                            let temp_html = `<div class="col">
                     <div class="card" style="border-radius: 10px;">
                         <div>
                             <div class="icon-cover">
@@ -216,9 +220,9 @@
                         </div>
                     </div>
                 </div>`
-                        $("#store").append(temp_html);
+                            $("#store").append(temp_html);
+                        }
                     }
-                }
             });
         }
 
@@ -231,12 +235,12 @@
                     $("#store").empty()
                     let disert_list = response['disert_lists']
                     for (let i = 0; i < disert_list.length; i++) {
-                        if (disert_list[i]['hashtags'].includes("디저트")) {
-                            let hashtags = disert_list[i]['hashtags']
-                            let image = disert_list[i]['image']
-                            let like = disert_list[i]['like_users'].length
-                            let stars = disert_list[i]['stars']
-                            let title = disert_list[i]['title']
+                        if(disert_list[i]['hashtags'].includes("디저트")){
+                        let hashtags = disert_list[i]['hashtags']
+                        let image = disert_list[i]['image']
+                        let like = disert_list[i]['like_users'].length
+                        let stars = disert_list[i]['stars']
+                        let title = disert_list[i]['title']
                             let temp_html = `<div class="col">
                     <div class="card" style="border-radius: 10px;">
                         <div>
@@ -282,12 +286,12 @@
                     $("#store").empty()
                     let coffee_list = response['coffee_lists']
                     for (let i = 0; i < coffee_list.length; i++) {
-                        if (coffee_list[i]['hashtags'].includes("커피")) {
-                            let hashtags = coffee_list[i]['hashtags']
-                            let image = coffee_list[i]['image']
-                            let like = coffee_list[i]['like_users'].length
-                            let stars = coffee_list[i]['stars']
-                            let title = coffee_list[i]['title']
+                        if(coffee_list[i]['hashtags'].includes("커피")){
+                        let hashtags = coffee_list[i]['hashtags']
+                        let image = coffee_list[i]['image']
+                        let like = coffee_list[i]['like_users'].length
+                        let stars = coffee_list[i]['stars']
+                        let title = coffee_list[i]['title']
                             let temp_html = `<div class="col">
                     <div class="card" style="border-radius: 10px;">
                         <div>
@@ -333,12 +337,12 @@
                     $("#store").empty()
                     let bing_list = response['bing_lists']
                     for (let i = 0; i < bing_list.length; i++) {
-                        if (bing_list[i]['hashtags'].includes("빙수")) {
-                            let hashtags = bing_list[i]['hashtags']
-                            let image = bing_list[i]['image']
-                            let like = bing_list[i]['like_users'].length
-                            let stars = bing_list[i]['stars']
-                            let title = bing_list[i]['title']
+                        if(bing_list[i]['hashtags'].includes("빙수")){
+                        let hashtags = bing_list[i]['hashtags']
+                        let image = bing_list[i]['image']
+                        let like = bing_list[i]['like_users'].length
+                        let stars = bing_list[i]['stars']
+                        let title = bing_list[i]['title']
                             let temp_html = `<div class="col">
                     <div class="card" style="border-radius: 10px;">
                         <div>
@@ -384,12 +388,12 @@
                     $("#store").empty()
                     let like_list = response['like_lists']
                     for (let i = 0; i < like_list.length; i++) {
-                        if (like_list[i]['hashtags'].includes("커피")) {
-                            let hashtags = like_list[i]['hashtags']
-                            let image = like_list[i]['image']
-                            let like = like_list[i]['like_users'].length
-                            let stars = like_list[i]['stars']
-                            let title = like_list[i]['title']
+                        if(like_list[i]['hashtags'].includes("커피")){
+                        let hashtags = like_list[i]['hashtags']
+                        let image = like_list[i]['image']
+                        let like = like_list[i]['like_users'].length
+                        let stars = like_list[i]['stars']
+                        let title = like_list[i]['title']
                             let temp_html = `<div class="col">
                     <div class="card" style="border-radius: 10px;">
                         <div>
