@@ -388,7 +388,7 @@
                     $("#store").empty()
                     let like_list = response['like_lists']
                     for (let i = 0; i < like_list.length; i++) {
-                        if(like_list[i]['hashtags'].includes("커피")){
+                        if(like_list[i]==="{{ user_info["id"] }}"){
                         let hashtags = like_list[i]['hashtags']
                         let image = like_list[i]['image']
                         let like = like_list[i]['like_users'].length
