@@ -131,8 +131,12 @@ def cafe_detail(detail):
     cafe = db.cafes.find_one({"title": detail})
 
     if cafe is None:
-        return redirect(url_for("/"))
+        return redirect("/ban")
     return render_template("detail.html", cafe=cafe)
+
+@app.route("/ban")
+def ban() :
+    return render_template("404ban.html")
 
 
 # 좋아요 누르기
