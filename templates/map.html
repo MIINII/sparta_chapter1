@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{%block contents %}
-<div class="wrap">
-    <div id="map"></div>
-    <div class="matjip-list" id="matjip-box">
-        <div class="card" id="card-0">
+{% block contents %}
+    <div class="wrap">
+        <div id="map"></div>
+        <div class="matjip-list" id="matjip-box">
+            <div class="card" id="card-0">
 
+            </div>
         </div>
     </div>
-</div>
 
-   <style>
+    <style>
         .wrap {
             width: 90%;
             max-width: 750px;
@@ -56,6 +56,10 @@
             font-size: smaller;
         }
 
+        .card .card-body a {
+            text-decoration: none
+        }
+
     </style>
 
 
@@ -85,7 +89,7 @@
                                     <h5 class="card-title"><a href="#" class="matjip-title">${matjip['title']}</a></h5>
                                     <h6 class="card-subtitle mb-2 text-muted">⭐ ${matjip['stars']}</h6>
                                     <p class="card-text">${matjip['address']}</p>
-                                    <p class="card-text" style="color:blue;">${matjip['hashtags']}</p>
+                                    <p class="card-text">${matjip['hashtags']}</p>
                                 </div>
                             </div>`;
             $('#matjip-box').append(temp_html);
