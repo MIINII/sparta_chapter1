@@ -75,8 +75,8 @@ sparta_chapter1
 * * *
 
 ## 💞LOVE MEMBERS💞  
-  [🍇강윤주](https://github.com/glooooow)
-  [🌊신정민](https://github.com/MIINII)
-  [🏝심유선](https://github.com/Simyusun)
-  [😺유민아](https://github.com/maydec2298)
-  [🦖황준수](https://github.com/Hwang-Junsu)
+  [🍇강윤주 : @glooooow](https://github.com/glooooow)  
+  [🌊신정민 : @MIINII](https://github.com/MIINII)  
+  [🏝심유선 : @Simyusun](https://github.com/Simyusun)  
+  [😺유민아 : @maydec2298](https://github.com/maydec2298)  
+  [🦖황준수 : @Hwang-Junsu](https://github.com/Hwang-Junsu)  
