@@ -39,8 +39,8 @@ def home():
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=["HS256"])
         user_info = db.user.find_one({"id": payload["id"]})
-        # cafe_list = list(db.cafes.find({}))
-        return render_template("cafes.html", user_info=user_info)
+        cafe_list = list(db.cafes.find({}))
+        return render_template("cafes.html", user_info=user_info, cafe_list=cafe_list)
     except jwt.ExpiredSignatureError:
         return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
     except jwt.exceptions.DecodeError:
