@@ -23,3 +23,47 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)  ![Bulma](https://img.shields.io/badge/bulma-00D0B1?style=for-the-badge&logo=bulma&logoColor=white)  ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)  
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)  ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)  ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black)  ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)  
+
+## PROJECT TREE
+```
+sparta_chapter1
+├─ app.py
+├─ README.md
+├─ screen_shot
+│  ├─ detail.png
+│  ├─ home.png
+│  └─ login.png
+├─ static
+│  ├─ css
+│  │  ├─ cafes.css
+│  │  ├─ login.css
+│  │  ├─ register.css
+│  │  ├─ reset.css
+│  │  └─ style.css
+│  ├─ image
+│  │  ├─ favicon.ico
+│  │  ├─ favicon.png
+│  │  ├─ favicon.svg
+│  │  ├─ logo.png
+│  │  ├─ sliding_img01.jpg
+│  │  ├─ sliding_img02.jpg
+│  │  ├─ sliding_img03.jpg
+│  │  └─ sliding_img04.jpg
+│  └─ js
+│     ├─ login.js
+│     └─ register.js
+└─ templates
+   ├─ base.html
+   ├─ cafes.html
+   ├─ detail.html
+   ├─ index.html
+   ├─ login.html
+   ├─ map.html
+   └─ register.html
+
+```  
+  
+## TROUBLE SHOOTING💢
+ * 로그인 안되고/토큰이 안만들어지는 문제 : decode함수 삭제로 해결!
+ * GIT 연동 : 유튜브와 블로글 참고로 해결!
+ * 서버 구현이 제대로 안되는 현상 : python 3.8버전으로 재설치!
