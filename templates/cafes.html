@@ -57,13 +57,8 @@
         <button onclick="listing_all()" type="button" class="btn btn-outline-secondary"># 전체</button>
         <button type="button" class="btn btn-outline-secondary"># 디저트</button>
         <button type="button" class="btn btn-outline-secondary"># 커피</button>
-<<<<<<< HEAD
-        <button type="button" class="btn btn-outline-secondary"># 케이크테스트테스트</button>
-        <button type="button" class="btn btn-outline-secondary"># 조아요테스트</button>
-=======
-        <button type="button" class="btn btn-outline-secondary"># 케이크</button>
+        <button type="button" class="btn btn-outline-secondary"># 케이크맛잇다~~</button>
         <button type="button" class="btn btn-outline-secondary"># 좋아요</button>
->>>>>>> 72373e9c4356be206ebb48c50359b37755603b9a
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin: auto">
@@ -145,8 +140,9 @@
         function like(v) {
             let class_list = v.classList
 
-            let username = 'temp' // 현재 접속이 되어있는 유저네임을 받아오기
+            let username = "{{ user_info['id'] }}" // 현재 접속이 되어있는 유저네임을 받아오기
             let post_title = v['id'] // 누른 게시물의 이름 정보
+
             console.log(post_title)
 
             if (class_list.contains('fa-heart-o')) {
