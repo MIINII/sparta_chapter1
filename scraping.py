@@ -69,5 +69,3 @@ for cafe in cafes:
                 "hashtags": list(temp_set),
             }
             db.cafes.insert_one(doc)
-        else:
-            print(names, "좌표를 찾지 못했습니다")
