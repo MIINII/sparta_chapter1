@@ -140,8 +140,9 @@
         function like(v) {
             let class_list = v.classList
 
-            let username = 'temp' // 현재 접속이 되어있는 유저네임을 받아오기
+            let username = "{{ user_info['id'] }}" // 현재 접속이 되어있는 유저네임을 받아오기
             let post_title = v['id'] // 누른 게시물의 이름 정보
+
             console.log(post_title)
 
             if (class_list.contains('fa-heart-o')) {
