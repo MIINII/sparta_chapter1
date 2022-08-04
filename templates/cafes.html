@@ -1,427 +1,382 @@
-{% extends "base.html" %}
-{% block contents %}
+{% extends "base.html" %} {% block contents %}
 <div class="carousel-box">
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
-                    aria-current="true"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <!-- carousel 첫번째 배너 -->
-            <div class="carousel-item active">
-                <img src="../static/image/sliding_img01.jpg" width="100%" height="400px"/>
-                <div class="container">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-
-            <!-- carousel 두번째 배너 -->
-            <div class="carousel-item">
-                <img src="../static/image/sliding_img02.jpg" width="100%" height="400px"/>
-                <div class="container">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-
-            <!-- carousel 세번째 배너 -->
-            <div class="carousel-item">
-                <img src="../static/image/sliding_img03.jpg" width="100%" height="400px"/>
-                <div class="container">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-
-            <!-- carousel 네번째 배 -->
-            <div class="carousel-item">
-                <img src="../static/image/sliding_img04.jpg" width="100%" height="400px"/>
-                <div class="container">
-                    <div class="carousel-caption"></div>
-                </div>
-            </div>
-        </div>
-        <!--좌우버튼-->
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
-    <!--해시태그-->
-    <div class="hashtag">
-        <button onclick="listing_all()" type="button" class="btn btn-outline-secondary"># 전체</button>
-        <button type="button" class="btn btn-outline-secondary"># 디저트</button>
-        <button type="button" class="btn btn-outline-secondary"># 커피</button>
-        <button type="button" class="btn btn-outline-secondary"># 케이크맛잇다~~</button>
-        <button type="button" class="btn btn-outline-secondary"># 좋아요</button>
-    </div>
+    <div class="carousel-inner">
+      <!-- carousel 첫번째 배너 -->
+      <div class="carousel-item active">
+        <img src="../static/image/sliding_img01.jpg" width="100%" height="400px" />
+    
+        <div class="container">
+          <div class="carousel-caption"></div>
+        </div>
+    
+      </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin: auto">
-        {% for cafe in cafe_list %}
-        <div class="col">
-            <div class="card" style="border-radius: 10px">
-                <div>
-                    <div class="icon-cover">
+      <!-- carousel 두번째 배너 -->
+      <div class="carousel-item">
+        <img src="../static/image/sliding_img02.jpg" width="100%" height="400px" />
+        <div class="container">
+          <div class="carousel-caption"></div>
+        </div>
+      </div>
+
+      <!-- carousel 세번째 배너 -->
+      <div class="carousel-item">
+        <img src="../static/image/sliding_img03.jpg" width="100%" height="400px" />
+        <div class="container">
+          <div class="carousel-caption"></div>
+        </div>
+      </div>
+
+      <!-- carousel 네번째 배 -->
+      <div class="carousel-item">
+        <img src="../static/image/sliding_img04.jpg" width="100%" height="400px" />
+        <div class="container">
+          <div class="carousel-caption"></div>
+        </div>
+      </div>
+    </div>
+    <!--좌우버튼-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--해시태그-->
+  <div class="hashtag">
+    <button onclick="listing_all()" type="button" class="btn btn-outline-secondary"># 전체</button>
+    <button type="button" class="btn btn-outline-secondary"># 디저트</button>
+    <button type="button" class="btn btn-outline-secondary"># 커피</button>
+    <button type="button" class="btn btn-outline-secondary"># 케이크맛잇다~~</button>
+    <button type="button" class="btn btn-outline-secondary"># 좋아요</button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; height: 100%; margin: auto">
+    {% for cafe in cafe_list %}
+    <div class="col">
+      <div class="card" style="border-radius: 10px">
+        <div>
+          <div class="icon-cover">
+            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true" id="{{ cafe.title }}" onclick="like(this)"></i></span>
+            <span class="like-count">{{ cafe["like_user"] | length }}</span>
+          </div>
+        </div>
+        <img src="{{ cafe['image'] }}" class="card-img-top" alt="..." />
+        <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
+          <h5 class="card-title">
+            <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><i class="fa-solid fa-mug-saucer fa-xs" style="margin-right: 5px"></i>{{ cafe['title'] }}</div>
+            <span><i class="fa-solid fa-star" style="margin-right: 5px; color: #f7d358"></i>{{ cafe["stars"] }}</span>
+          </h5>
+          <p class="card-text" style="font-size: 12px; color: #075da5">
+            {% for hash in cafe["hashtags"] %}
+            <span>{{ "#{0}".format(hash) }}</span>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <script src="{{ url_for('static', filename='myjs.js') }}"></script>
+  <script>
+    function like(v) {
+      let class_list = v.classList
+
+      let username = "{{ user_info['id'] }}" // 현재 접속이 되어있는 유저네임을 받아오기
+      let post_title = v['id'] // 누른 게시물의 이름 정보
+
+      console.log(post_title)
+
+      if (class_list.contains('fa-heart-o')) {
+        v.classList.remove('fa-heart-o')
+        v.classList.add('fa-heart')
+      } else {
+        v.classList.add('fa-heart-o')
+        v.classList.remove('fa-heart')
+      }
+      $.ajax({
+        type: 'POST',
+        url: '/like',
+        data: { username_give: username, post_title_give: post_title },
+        success: function (response) {
+          alert(response['msg'])
+          window.location.reload()
+        },
+      })
+    }
+  </script>
+  <script>
+    $('#store').empty()
+    $(document).ready(function () {
+      listing_all()
+      console.log("{{ user_info['id'] }}")
+    })
+
+    function listing_all() {
+      $.ajax({
+        type: 'GET',
+        url: '/all',
+        data: {},
+        success: function (response) {
+          $('#store').empty()
+          let all_list = response['all_lists']
+          for (let i = 0; i < all_list.length; i++) {
+            let hashtags = all_list[i]['hashtags']
+            let image = all_list[i]['image']
+            let like = all_list[i]['like_users'].length
+            let stars = all_list[i]['stars']
+            let title = all_list[i]['title']
+            let temp_html = `<div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
                         <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                       id="{{ cafe.title }}" onclick="like(this)"></i></span>
-                        <span class="like-count">{{ cafe["like_user"] | length }}</span>
+                                                       id="${title}
+                                                       onclick="like(this)"></i></span>
+                            <span class="like-count">${like}</span>
+                        </div>
+                    </div>
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/${title}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                    overflow:hidden;
+                                    text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>${title}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            <span>#${hashtags[0]}</span>
+                            <span>#${hashtags[1]}</span>
+                            <span>#${hashtags[2]}</span>
+                        </p>
                     </div>
                 </div>
-                <img src="{{ cafe['image'] }}" class="card-img-top" alt="..."/>
-                <div class="card-body" onclick="window.location.href='/{{ cafe.title }}'">
-                    <h5 class="card-title">
-                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><i
-                                class="fa-solid fa-mug-saucer fa-xs" style="margin-right: 5px"></i>{{ cafe['title'] }}
+            </div>`
+            $('#store').append(temp_html)
+          }
+        },
+      })
+    }
+
+    function listing_disert() {
+      $.ajax({
+        type: 'GET',
+        url: '/disert',
+        data: {},
+        success: function (response) {
+          $('#store').empty()
+          let disert_list = response['disert_lists']
+          for (let i = 0; i < disert_list.length; i++) {
+            if (disert_list[i]['hashtags'].includes('디저트')) {
+              let hashtags = disert_list[i]['hashtags']
+              let image = disert_list[i]['image']
+              let like = disert_list[i]['like_users'].length
+              let stars = disert_list[i]['stars']
+              let title = disert_list[i]['title']
+              let temp_html = `<div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                        <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                       id="${title}
+                                                       onclick="like(this)"></i></span>
+                            <span class="like-count">${like}</span>
                         </div>
-                        <span><i class="fa-solid fa-star" style="margin-right: 5px; color: #f7d358"></i>{{ cafe["stars"] }}</span>
-                    </h5>
-                    <p class="card-text" style="font-size: 12px; color: #075da5">
-                        {% for hash in cafe["hashtags"] %}
-                        <span>{{ "#{0}".format(hash) }}</span>
-                        {% endfor %}
-                    </p>
+                    </div>
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/${title}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                    overflow:hidden;
+                                    text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>${title}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            <span>#${hashtags[0]}</span>
+                            <span>#${hashtags[1]}</span>
+                            <span>#${hashtags[2]}</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    <style>
-        .card:hover {
-            transition: 0.1s;
-            transform: scale(1.08);
-        }
-
-        .card {
-            position: relative;
-        }
-
-        .icon-cover {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-
-            background-color: white;
-            width: 60px;
-            height: 25px;
-
-            border-radius: 10px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .card-title {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .like {
-            color: #ff4646;
-        }
-
-        .like-count {
-            font-size: 14px;
-        }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script src="{{ url_for('static', filename='myjs.js') }}"></script>
-    <script>
-
-        function like(v) {
-            let class_list = v.classList
-
-            let username = "{{ user_info['id'] }}" // 현재 접속이 되어있는 유저네임을 받아오기
-            let post_title = v['id'] // 누른 게시물의 이름 정보
-
-            console.log(post_title)
-
-            if (class_list.contains('fa-heart-o')) {
-                v.classList.remove('fa-heart-o')
-                v.classList.add('fa-heart')
-            } else {
-                v.classList.add('fa-heart-o')
-                v.classList.remove('fa-heart')
+            </div>`
+              $('#store').append(temp_html)
             }
-            $.ajax({
-                type: 'POST',
-                url: '/like',
-                data: {username_give: username, post_title_give: post_title},
-                success: function (response) {
-                    alert(response['msg'])
-                    window.location.reload()
-                },
-            })
-        }
-    </script>
-    <script>
-        $("#store").empty()
-        $(document).ready(function () {
-            listing_all();
-            console.log("{{ user_info["id"] }}")
-        });
+          }
+        },
+      })
+    }
 
-        function listing_all() {
-            $.ajax({
-                type: 'GET',
-                url: '/all',
-                data: {},
-                success: function (response) {
-                    $("#store").empty()
-                    let all_list = response['all_lists']
-                    for (let i = 0; i < all_list.length; i++) {
-                        let hashtags = all_list[i]['hashtags']
-                        let image = all_list[i]['image']
-                        let like = all_list[i]['like_users'].length
-                        let stars = all_list[i]['stars']
-                        let title = all_list[i]['title']
-                        let temp_html = `<div class="col">
-                    <div class="card" style="border-radius: 10px;">
-                        <div>
-                            <div class="icon-cover">
-                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                           id="${title}
-                                                           onclick="like(this)"></i></span>
-                                <span class="like-count">${like}</span>
-                            </div>
-                        </div>
-                        <img src="${image}" class="card-img-top" alt="...">
-                        <div class="card-body" onclick="window.location.href='/${title}'">
-                            <h5 class="card-title">
-                                <div style="white-space: nowrap;
-                                        overflow:hidden;
-                                        text-overflow: ellipsis; ">
-                                    <i class="fa-solid fa-mug-saucer fa-xs"
-                                       style="margin-right:5px"></i>${title}</div>
-                                <span><i class="fa-solid fa-star"
-                                         style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
-                            </h5>
-                            <p class="card-text" style="font-size:12px; color:#075DA5">
-                                <span>#${hashtags[0]}</span>
-                                <span>#${hashtags[1]}</span>
-                                <span>#${hashtags[2]}</span>
-                            </p>
+    function listing_coffee() {
+      $.ajax({
+        type: 'GET',
+        url: '/coffee',
+        data: {},
+        success: function (response) {
+          $('#store').empty()
+          let coffee_list = response['coffee_lists']
+          for (let i = 0; i < coffee_list.length; i++) {
+            if (coffee_list[i]['hashtags'].includes('커피')) {
+              let hashtags = coffee_list[i]['hashtags']
+              let image = coffee_list[i]['image']
+              let like = coffee_list[i]['like_users'].length
+              let stars = coffee_list[i]['stars']
+              let title = coffee_list[i]['title']
+              let temp_html = `<div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                        <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                       id="${title}
+                                                       onclick="like(this)"></i></span>
+                            <span class="like-count">${like}</span>
                         </div>
                     </div>
-                </div>`
-                        $("#store").append(temp_html);
-                    }
-                }
-            });
-        }
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/${title}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                    overflow:hidden;
+                                    text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>${title}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            <span>#${hashtags[0]}</span>
+                            <span>#${hashtags[1]}</span>
+                            <span>#${hashtags[2]}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>`
+              $('#store').append(temp_html)
+            }
+          }
+        },
+      })
+    }
 
-        function listing_disert() {
-            $.ajax({
-                type: 'GET',
-                url: '/disert',
-                data: {},
-                success: function (response) {
-                    $("#store").empty()
-                    let disert_list = response['disert_lists']
-                    for (let i = 0; i < disert_list.length; i++) {
-                        if (disert_list[i]['hashtags'].includes("디저트")) {
-                            let hashtags = disert_list[i]['hashtags']
-                            let image = disert_list[i]['image']
-                            let like = disert_list[i]['like_users'].length
-                            let stars = disert_list[i]['stars']
-                            let title = disert_list[i]['title']
-                            let temp_html = `<div class="col">
-                    <div class="card" style="border-radius: 10px;">
-                        <div>
-                            <div class="icon-cover">
-                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                           id="${title}
-                                                           onclick="like(this)"></i></span>
-                                <span class="like-count">${like}</span>
-                            </div>
-                        </div>
-                        <img src="${image}" class="card-img-top" alt="...">
-                        <div class="card-body" onclick="window.location.href='/${title}'">
-                            <h5 class="card-title">
-                                <div style="white-space: nowrap;
-                                        overflow:hidden;
-                                        text-overflow: ellipsis; ">
-                                    <i class="fa-solid fa-mug-saucer fa-xs"
-                                       style="margin-right:5px"></i>${title}</div>
-                                <span><i class="fa-solid fa-star"
-                                         style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
-                            </h5>
-                            <p class="card-text" style="font-size:12px; color:#075DA5">
-                                <span>#${hashtags[0]}</span>
-                                <span>#${hashtags[1]}</span>
-                                <span>#${hashtags[2]}</span>
-                            </p>
+    function listing_bing() {
+      $.ajax({
+        type: 'GET',
+        url: '/bing',
+        data: {},
+        success: function (response) {
+          $('#store').empty()
+          let bing_list = response['bing_lists']
+          for (let i = 0; i < bing_list.length; i++) {
+            if (bing_list[i]['hashtags'].includes('빙수')) {
+              let hashtags = bing_list[i]['hashtags']
+              let image = bing_list[i]['image']
+              let like = bing_list[i]['like_users'].length
+              let stars = bing_list[i]['stars']
+              let title = bing_list[i]['title']
+              let temp_html = `<div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                        <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                       id="${title}
+                                                       onclick="like(this)"></i></span>
+                            <span class="like-count">${like}</span>
                         </div>
                     </div>
-                </div>`
-                            $("#store").append(temp_html);
-                        }
-                    }
-                }
-            });
-        }
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/${title}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                    overflow:hidden;
+                                    text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>${title}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            <span>#${hashtags[0]}</span>
+                            <span>#${hashtags[1]}</span>
+                            <span>#${hashtags[2]}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>`
+              $('#store').append(temp_html)
+            }
+          }
+        },
+      })
+    }
 
-        function listing_coffee() {
-            $.ajax({
-                type: 'GET',
-                url: '/coffee',
-                data: {},
-                success: function (response) {
-                    $("#store").empty()
-                    let coffee_list = response['coffee_lists']
-                    for (let i = 0; i < coffee_list.length; i++) {
-                        if (coffee_list[i]['hashtags'].includes("커피")) {
-                            let hashtags = coffee_list[i]['hashtags']
-                            let image = coffee_list[i]['image']
-                            let like = coffee_list[i]['like_users'].length
-                            let stars = coffee_list[i]['stars']
-                            let title = coffee_list[i]['title']
-                            let temp_html = `<div class="col">
-                    <div class="card" style="border-radius: 10px;">
-                        <div>
-                            <div class="icon-cover">
-                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                           id="${title}
-                                                           onclick="like(this)"></i></span>
-                                <span class="like-count">${like}</span>
-                            </div>
-                        </div>
-                        <img src="${image}" class="card-img-top" alt="...">
-                        <div class="card-body" onclick="window.location.href='/${title}'">
-                            <h5 class="card-title">
-                                <div style="white-space: nowrap;
-                                        overflow:hidden;
-                                        text-overflow: ellipsis; ">
-                                    <i class="fa-solid fa-mug-saucer fa-xs"
-                                       style="margin-right:5px"></i>${title}</div>
-                                <span><i class="fa-solid fa-star"
-                                         style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
-                            </h5>
-                            <p class="card-text" style="font-size:12px; color:#075DA5">
-                                <span>#${hashtags[0]}</span>
-                                <span>#${hashtags[1]}</span>
-                                <span>#${hashtags[2]}</span>
-                            </p>
+    function listing_like() {
+      $.ajax({
+        type: 'GET',
+        url: '/like',
+        data: {},
+        success: function (response) {
+          $('#store').empty()
+          let like_list = response['like_lists']
+          for (let i = 0; i < like_list.length; i++) {
+            if (like_list[i]['hashtags'].includes('커피')) {
+              let hashtags = like_list[i]['hashtags']
+              let image = like_list[i]['image']
+              let like = like_list[i]['like_users'].length
+              let stars = like_list[i]['stars']
+              let title = like_list[i]['title']
+              let temp_html = `<div class="col">
+                <div class="card" style="border-radius: 10px;">
+                    <div>
+                        <div class="icon-cover">
+                        <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
+                                                       id="${title}
+                                                       onclick="like(this)"></i></span>
+                            <span class="like-count">${like}</span>
                         </div>
                     </div>
-                </div>`
-                            $("#store").append(temp_html);
-                        }
-                    }
-                }
-            });
-        }
-
-        function listing_bing() {
-            $.ajax({
-                type: 'GET',
-                url: '/bing',
-                data: {},
-                success: function (response) {
-                    $("#store").empty()
-                    let bing_list = response['bing_lists']
-                    for (let i = 0; i < bing_list.length; i++) {
-                        if (bing_list[i]['hashtags'].includes("빙수")) {
-                            let hashtags = bing_list[i]['hashtags']
-                            let image = bing_list[i]['image']
-                            let like = bing_list[i]['like_users'].length
-                            let stars = bing_list[i]['stars']
-                            let title = bing_list[i]['title']
-                            let temp_html = `<div class="col">
-                    <div class="card" style="border-radius: 10px;">
-                        <div>
-                            <div class="icon-cover">
-                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                           id="${title}
-                                                           onclick="like(this)"></i></span>
-                                <span class="like-count">${like}</span>
-                            </div>
-                        </div>
-                        <img src="${image}" class="card-img-top" alt="...">
-                        <div class="card-body" onclick="window.location.href='/${title}'">
-                            <h5 class="card-title">
-                                <div style="white-space: nowrap;
-                                        overflow:hidden;
-                                        text-overflow: ellipsis; ">
-                                    <i class="fa-solid fa-mug-saucer fa-xs"
-                                       style="margin-right:5px"></i>${title}</div>
-                                <span><i class="fa-solid fa-star"
-                                         style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
-                            </h5>
-                            <p class="card-text" style="font-size:12px; color:#075DA5">
-                                <span>#${hashtags[0]}</span>
-                                <span>#${hashtags[1]}</span>
-                                <span>#${hashtags[2]}</span>
-                            </p>
-                        </div>
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body" onclick="window.location.href='/${title}'">
+                        <h5 class="card-title">
+                            <div style="white-space: nowrap;
+                                    overflow:hidden;
+                                    text-overflow: ellipsis; ">
+                                <i class="fa-solid fa-mug-saucer fa-xs"
+                                   style="margin-right:5px"></i>${title}</div>
+                            <span><i class="fa-solid fa-star"
+                                     style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
+                        </h5>
+                        <p class="card-text" style="font-size:12px; color:#075DA5">
+                            <span>#${hashtags[0]}</span>
+                            <span>#${hashtags[1]}</span>
+                            <span>#${hashtags[2]}</span>
+                        </p>
                     </div>
-                </div>`
-                            $("#store").append(temp_html);
-                        }
-                    }
-                }
-            });
-        }
-
-        function listing_like() {
-            $.ajax({
-                type: 'GET',
-                url: '/like',
-                data: {},
-                success: function (response) {
-                    $("#store").empty()
-                    let like_list = response['like_lists']
-                    for (let i = 0; i < like_list.length; i++) {
-                        if (like_list[i]['hashtags'].includes("커피")) {
-                            let hashtags = like_list[i]['hashtags']
-                            let image = like_list[i]['image']
-                            let like = like_list[i]['like_users'].length
-                            let stars = like_list[i]['stars']
-                            let title = like_list[i]['title']
-                            let temp_html = `<div class="col">
-                    <div class="card" style="border-radius: 10px;">
-                        <div>
-                            <div class="icon-cover">
-                            <span class="icon is-small"><i class="fa fa-heart-o like" aria-hidden="true"
-                                                           id="${title}
-                                                           onclick="like(this)"></i></span>
-                                <span class="like-count">${like}</span>
-                            </div>
-                        </div>
-                        <img src="${image}" class="card-img-top" alt="...">
-                        <div class="card-body" onclick="window.location.href='/${title}'">
-                            <h5 class="card-title">
-                                <div style="white-space: nowrap;
-                                        overflow:hidden;
-                                        text-overflow: ellipsis; ">
-                                    <i class="fa-solid fa-mug-saucer fa-xs"
-                                       style="margin-right:5px"></i>${title}</div>
-                                <span><i class="fa-solid fa-star"
-                                         style="margin-right:5px; color:#F7D358;"></i>${stars}</span>
-                            </h5>
-                            <p class="card-text" style="font-size:12px; color:#075DA5">
-                                <span>#${hashtags[0]}</span>
-                                <span>#${hashtags[1]}</span>
-                                <span>#${hashtags[2]}</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>`
-                            $("#store").append(temp_html);
-                        }
-                    }
-                }
-            });
-        }
-    </script>
-    {% endblock %}
+                </div>
+            </div>`
+              $('#store').append(temp_html)
+            }
+          }
+        },
+      })
+    }
+  </script>
+  {% endblock %}
 </div>

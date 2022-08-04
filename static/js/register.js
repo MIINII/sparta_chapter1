@@ -123,7 +123,7 @@ function register() {
         })
         setTimeout(function go_login() {
           window.location.href = '/login'
-        }, 500)
+        }, 700)
       }
     },
   })

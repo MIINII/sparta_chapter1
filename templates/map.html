@@ -1,154 +1,131 @@
-{% extends "base.html" %}
-{%block contents %}
+{% extends "base.html" %} {%block contents %}
 <div class="wrap">
-    <div id="map"></div>
-    <div class="matjip-list" id="matjip-box">
-        <div class="card" id="card-0">
-
-        </div>
-    </div>
+  <div id="map"></div>
+  <div class="matjip-list" id="matjip-box">
+    <div class="card" id="card-0"></div>
+  </div>
 </div>
 
-   <style>
-        .wrap {
-            width: 90%;
-            max-width: 750px;
-            margin: 0 auto;
-            list-style: none;
-            text-decoration: none;
-        }
+<style>
+  .wrap {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    list-style: none;
+    text-decoration: none;
+  }
 
-        .header {
-            width: 100%;
-            height: 200px;
+  .matjip-list {
+    overflow: scroll;
+    width: 100%;
+    height: calc(20vh - 30px);
+    position: relative;
+  }
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+  .card-title,
+  .card-subtitle {
+    display: inline;
+  }
 
-        .header .logo > img {
-            width: 300px;
-            margin: auto;
-        }
+  #map {
+    width: 100%;
+    height: 50vh;
+    margin: 20px auto 20px auto;
+  }
 
+  .iw-inner {
+    padding: 10px;
+    font-size: smaller;
+  }
+</style>
 
-        .matjip-list {
-            overflow: scroll;
-            width: 100%;
-            height: calc(20vh - 30px);
-            position: relative;
-        }
+<script>
+  let y_cen = 35.8439529 // lat
+  let x_cen = 129.237447 // long
+  let map
+  let markers = []
+  let infowindows = []
 
-        .card-title, .card-subtitle {
-            display: inline;
-        }
+  $(document).ready(function () {
+    map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(y_cen, x_cen),
+      zoom: 12,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: naver.maps.ZoomControlStyle.SMALL,
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+    })
+    get_matjips()
+  })
 
-        #map {
-            width: 100%;
-            height: 50vh;
-            margin: 20px auto 20px auto;
-        }
-
-        .iw-inner {
-            padding: 10px;
-            font-size: smaller;
-        }
-
-    </style>
-
-
-    <script>
-        let y_cen = 35.8439529   // lat
-        let x_cen = 129.237447  // long
-        let map;
-        let markers = [];
-        let infowindows = [];
-
-        $(document).ready(function () {
-            map = new naver.maps.Map('map', {
-                center: new naver.maps.LatLng(y_cen, x_cen),
-                zoom: 12,
-                zoomControl: true,
-                zoomControlOptions: {
-                    style: naver.maps.ZoomControlStyle.SMALL,
-                    position: naver.maps.Position.TOP_RIGHT
-                }
-            });
-            get_matjips();
-        })
-
-        function make_card(i, matjip) {
-            let temp_html = `<div class="card" id="card-${i}">
+  function make_card(i, matjip) {
+    let temp_html = `<div class="card" id="card-${i}">
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="#" class="matjip-title">${matjip['title']}</a></h5>
                                     <h6 class="card-subtitle mb-2 text-muted">⭐ ${matjip['stars']}</h6>
                                     <p class="card-text">${matjip['address']}</p>
                                     <p class="card-text" style="color:blue;">${matjip['hashtags']}</p>
                                 </div>
-                            </div>`;
-            $('#matjip-box').append(temp_html);
+                            </div>`
+    $('#matjip-box').append(temp_html)
+  }
 
+  function get_matjips() {
+    $('#matjip-box').empty()
+    $.ajax({
+      type: 'GET',
+      url: '/matjip',
+      data: {},
+      success: function (response) {
+        let matjips = response['matjip_list']
+        for (let i = 0; i < matjips.length; i++) {
+          let matjip = matjips[i]
+          console.log(matjip)
+          make_card(i, matjip)
+          let marker = make_marker(matjip)
+          add_info(i, marker, matjip)
         }
+      },
+    })
+  }
 
-        function get_matjips() {
-            $('#matjip-box').empty();
-            $.ajax({
-                type: "GET",
-                url: '/matjip',
-                data: {},
-                success: function (response) {
-                    let matjips = response["matjip_list"]
-                    for (let i = 0; i < matjips.length; i++) {
-                        let matjip = matjips[i]
-                        console.log(matjip)
-                        make_card(i, matjip)
-                        let marker = make_marker(matjip);
-                        add_info(i, marker, matjip);
-                    }
-                }
-            });
-        }
+  function make_marker(matjip) {
+    let marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(matjip['mapy'], matjip['mapx']),
+      map: map,
+    })
+    markers.push(marker)
+    return marker
+  }
 
-        function make_marker(matjip) {
-            let marker = new naver.maps.Marker({
-                position: new naver.maps.LatLng(matjip["mapy"], matjip["mapx"]),
-                map: map
-            });
-            markers.push(marker)
-            return marker
-        }
-
-        function add_info(i, marker, matjip) {
-            let html_temp = `<div class="iw-inner">
+  function add_info(i, marker, matjip) {
+    let html_temp = `<div class="iw-inner">
                                 <h5>${matjip['title']}</h5>
                                 <p>${matjip['address']}
-                             </div>`;
-            let infowindow = new naver.maps.InfoWindow({
-                content: html_temp,
-                maxWidth: 200,
-                backgroundColor: "#fff",
-                borderColor: "#888",
-                borderWidth: 2,
-                anchorSize: new naver.maps.Size(15, 15),
-                anchorSkew: true,
-                anchorColor: "#fff",
-                pixelOffset: new naver.maps.Point(10, -10)
-
-            });
-            infowindows.push(infowindow)
-            naver.maps.Event.addListener(marker, "click", function (e) {
-                if (infowindow.getMap()) {
-                    infowindow.close();
-                } else {
-                    infowindow.open(map, marker);
-                    map.setCenter(infowindow.position)
-                }
-            });
-        }
-    </script>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=zoy4z6uvyv"></script>
+                             </div>`
+    let infowindow = new naver.maps.InfoWindow({
+      content: html_temp,
+      maxWidth: 200,
+      backgroundColor: '#fff',
+      borderColor: '#888',
+      borderWidth: 2,
+      anchorSize: new naver.maps.Size(15, 15),
+      anchorSkew: true,
+      anchorColor: '#fff',
+      pixelOffset: new naver.maps.Point(10, -10),
+    })
+    infowindows.push(infowindow)
+    naver.maps.Event.addListener(marker, 'click', function (e) {
+      if (infowindow.getMap()) {
+        infowindow.close()
+      } else {
+        infowindow.open(map, marker)
+        map.setCenter(infowindow.position)
+      }
+    })
+  }
+</script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=zoy4z6uvyv"></script>
 
 {% endblock %}
